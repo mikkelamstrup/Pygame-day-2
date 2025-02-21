@@ -60,7 +60,7 @@ while running:
     if keys[pygame.K_w]: player2_y -= player_speed
     if keys[pygame.K_s]: player2_y += player_speed
 
-    # 🚀 Opdater kugler
+    # Opdater kugler
     for bullet in player1_bullets:
         bullet[0] -= bullet_speed  # Skyd mod højre
         if bullet[0] > WIDTH:  # Fjern kugler uden for skærmen
