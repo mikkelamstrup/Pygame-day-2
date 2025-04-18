@@ -41,20 +41,19 @@ while running:
     # Spilleren kan bevæge sig
     keys = pygame.key.get_pressed()
 
-    # 🎮 **Blå spiller (Piletaster)**
+    # **Blå spiller (Piletaster)**
     if keys[pygame.K_LEFT]: player1_x -= player_speed
     if keys[pygame.K_RIGHT]: player1_x += player_speed
     if keys[pygame.K_UP]: player1_y -= player_speed
     if keys[pygame.K_DOWN]: player1_y += player_speed
 
-    # 🎮 **Rød spiller (WASD)**
+    # **Rød spiller (WASD)**
     if keys[pygame.K_a]: player2_x -= player_speed
     if keys[pygame.K_d]: player2_x += player_speed
     if keys[pygame.K_w]: player2_y -= player_speed
     if keys[pygame.K_s]: player2_y += player_speed
 
-
-    # 🎨 Tegn alt på skærmen
+    # Få alt på skærmen
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLUE, (player1_x, player1_y, 50, 50))  # Blå spiller
     pygame.draw.rect(screen, RED, (player2_x, player2_y, 50, 50))   # Rød spiller

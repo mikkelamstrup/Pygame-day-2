@@ -40,26 +40,22 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-        # Spillere skyder kugler
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:  # Blå spiller skyder
-                player1_bullets.append([player1_x + 50, player1_y + 25])  # Kuglen starter ved spilleren
-            if event.key == pygame.K_SPACE:  # Rød spiller skyder
-                player2_bullets.append([player2_x, player2_y + 25])  # Kuglen starter ved spilleren
-
     # **Blå spiller (Piletaster)**
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT]: player1_x -= player_speed
     if keys[pygame.K_RIGHT]: player1_x += player_speed
     if keys[pygame.K_UP]: player1_y -= player_speed
     if keys[pygame.K_DOWN]: player1_y += player_speed
+    if keys[pygame.K_RETURN]:  # Blå spiller skyder
+        player1_bullets.append([player1_x + 50, player1_y + 25])  # Kuglen starter ved spilleren
 
     # **Rød spiller (WASD)**
     if keys[pygame.K_a]: player2_x -= player_speed
     if keys[pygame.K_d]: player2_x += player_speed
     if keys[pygame.K_w]: player2_y -= player_speed
     if keys[pygame.K_s]: player2_y += player_speed
-
+    if keys[pygame.K_SPACE]:  # Rød spiller skyder
+        player2_bullets.append([player2_x, player2_y + 25])  # Kuglen starter ved spilleren
     # Opdater kugler
     for bullet in player1_bullets:
         bullet[0] -= bullet_speed  # Skyd mod højre
